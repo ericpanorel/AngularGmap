@@ -1,0 +1,22 @@
+﻿<div class="row">
+    <form class="form-inline">
+        <label>From </label>
+        <input type="text" class="form-control" placeholder="From Address" data-ng-model="gmap.fromAddress" style="width: 300px;" />
+        <label>Mode of Travel </label>
+        <select class="form-control" data-ng-model="gmap.selectedOption" data-ng-options="c for c in gmap.options" style="width: 180px;"></select>
+        <button class="btn btn-info" data-ng-click='gmap.setDirections()'><i class="icon-search"></i>Get Directions</button>
+    </form>
+</div>
+<div class='row' style="height: 5px;">
+</div>
+<div class='row'>
+    <div class="col-lg-3">
+        <div id="directions"></div>
+        <p>
+            Total Distance: {{gmap.totalKm}} km
+        </p>
+    </div>
+    <div class="col-lg-9" id="map_canvas" style="height: 480px;">
+    </div>
+</div>
+

@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="">
+<!--<![endif]-->
+<head>
+    <script src="Scripts/modernizr-2.6.2.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        WebFontConfig = {
+            google: { families: ['Open+Sans:latin'] }
+        };
+        (function () {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+    <style type="text/css">
+        .wf-loading * {
+            opacity: 0;
+        }
+
+        .wf-loading {
+            background: url('Content/images/ajax-loader.gif') no-repeat center center;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .wf-active *,
+        .wf-inactive * {
+        }
+    </style>
+
+    <title>EricPanorel.Net</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="Content/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap/bootswatch.min.css" rel="stylesheet" />
+    <link href="Content/toastr.min.css" rel="stylesheet" />
+    <link href="Content/app.css" rel="stylesheet" />
+    <script type="text/javascript">
+
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var msViewportStyle = document.createElement("style");
+            var mq = "@@-ms-viewport{width:auto!important}";
+            msViewportStyle.appendChild(document.createTextNode(mq));
+            document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+        }
+    </script>
+</head>
+<body data-ng-app="gApp">
+    <div id="wrap">
+        <!-- Fixed navbar -->
+        <div class="navbar navbar-fixed-top">
+            <div class="container">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">My Directions</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#"><i class="icon-home"></i>Home</a></li>
+
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+        <div class="container" data-ng-controller="CtrlGMap">
+            <div class="row">
+                <form class="form-inline">
+                    <label>From </label>
+                    <input type="text" class="form-control" placeholder="From Address" data-ng-model="fromAddress" style="width: 300px;" />
+                    <label>Mode of Travel </label>
+                    <select class="form-control" data-ng-model="selectedOption" data-ng-options="c for c in options" style="width: 180px;"></select>
+                    <button class="btn btn-info" data-ng-click='setDirections()'><i class="icon-search"></i>Get Directions</button>
+                </form>
+            </div>
+            <div class='row' style="height: 5px;">
+            </div>
+            <div class='row'>
+                <div class="col-lg-3">
+                    <div id="directions"></div>
+                    <p>
+                        Total Distance: {{totalKm}} km
+                    </p>
+                </div>
+                <div class="col-lg-9" id="map_canvas" style="height: 480px;">
+                </div>
+            </div>
+
+
+        </div>
+        <div id="footer" class="navbar navbar-fixed-bottom">
+            <div class="navbar-inner navbar-content-center">
+                <div class='container foot-text'>
+                    <span class="pull-left">Copyright © 2013 EricPanorel.Net | All Rights
+                    Reserved</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Scripts/jquery-2.0.3.min.js"></script>
+    <script src="Scripts/toastr.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+
+    <script src="App/app.js"></script>
+    <script src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="App/controllers/CtrlGMap.js"></script>
+</body>
+</html>
