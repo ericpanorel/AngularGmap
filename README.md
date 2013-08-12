@@ -8,4 +8,5 @@ First method, is demonstrated in <em>index.html</em>
 
 Second method, is shown in index2.html. This was done using a directive. Google map is also loaded asynchronously.
 
+jQuery and toastr are only included here, for popup display purposes...
 
