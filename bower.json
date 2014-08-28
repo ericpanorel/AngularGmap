@@ -1,0 +1,23 @@
+{
+  "name": "AngularGmap",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ericpanorel/AngularGmap",
+  "authors": [
+    "Eric Panorel <https://github.com/ericpanorel>",
+    "Willian Ribeiro Angelo <agfoccus@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.23",
+    "modernizr": "~2.8.3",
+    "toastr": "~2.0.3"
+  }
+}
